@@ -55,7 +55,7 @@ $ rake db:data:migrate MIGRATE_PATH=/db/other_data
 
 ### Things to Note
 
-There are a couple things to note when using this tool:
+There are a few things to note when using this tool:
 
 - The schema_migrations directory is shared across ALL MIGRATIONS. This means that you should make it a practice to have unique identifiers for ALL migration files across ALL migration directories. A good way to use this is to use the date and time for the identifier, such as "201207062043\_update\_some\_data.rb".
 - ActiveDataMigrations has been tested with Rails 3. It is not guaranteed to work with other versions of Rails or as a stand alone library.
