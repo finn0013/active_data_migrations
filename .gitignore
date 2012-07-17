@@ -1,0 +1,10 @@
+*.gem
+.bundle
+pkg/*
+active_data_migrations.iml
+active_data_migrations.ipr
+active_data_migrations.iws
+.svn
+.svn/**
+reinstall.sh
+.rvmrc
