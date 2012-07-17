@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
     s.author = "Jason McDonald"
     s.email = "jason@mcdonaldland.info"
-    s.homepage = "http://www.McDonaldLand.info"
+    s.homepage = "https://github.com/finn0013/active_data_migrations"
 
     s.summary = "Utilizing ActiveRecord migrations to enable data migrations independently from schema migrations."
     s.description = "Utilizing ActiveRecord migrations to enable data migrations independently from schema migrations."

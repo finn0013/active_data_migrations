@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    active_data_migrations (1.0.0.beta)
+    active_data_migrations (1.0.0)
 
 GEM
   remote: http://rubygems.org/
