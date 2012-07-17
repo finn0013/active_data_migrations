@@ -57,13 +57,14 @@ $ rake db:data:migrate MIGRATE_PATH=/db/other_data
 
 There are a few things to note when using this tool:
 
-- The schema_migrations directory is shared across ALL MIGRATIONS. This means that you should make it a practice to have unique identifiers for ALL migration files across ALL migration directories. A good way to use this is to use the date and time for the identifier, such as "201207062043\_update\_some\_data.rb".
+- The schema_migrations directory is shared across ALL MIGRATIONS. This means that you should make it a practice to have unique identifiers for ALL migration files across ALL migration directories. A good way to do this is to use the date and time for the identifier, such as "201207062043\_update\_some\_data.rb".
 - ActiveDataMigrations has been tested with Rails 3. It is not guaranteed to work with other versions of Rails or as a stand alone library.
+- It doesn't list ActiveRecord as a dependency but instead assumes you have installed it already. This ensures that the version of ActiveRecord installed is always the one you plan to use anyhow.
 - Since this simply sits on top of ActiveRecord migrations you can also use it to run a standard schema migration by setting the migrate path to /db/schema (or wherever you have configured your schema root to be).
 
 ### Contributing
 
-I welcome any contributions anyone is wanting or willing to give. To contribute to the project you can contact me via <http://www.McDonaldLand.info>.
+I welcome any contributions anyone is wanting or willing to give. To contribute to the project you can contact me via: <http://www.McDonaldLand.info>.
 
 ### License
 
