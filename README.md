@@ -7,12 +7,12 @@ This is particularly useful in cases where you want to separate your data migrat
 ### Installation
 
 ```sh
-$ gem install whenever
+$ gem install active_data_migrations
 ```
 
 ### Usage
 
-ActiveDataMigrations runs just like a normal migration only it has the ability to point to other source directories. 
+ActiveDataMigrations runs just like a normal migration only it has the ability to point to other source directories. Set up your migration files just like you do for a standard migration, only put them in a different directory.
 
 Running the following will execute all migrations in the default 'db/data' directory:
 
@@ -20,7 +20,7 @@ Running the following will execute all migrations in the default 'db/data' direc
 $ rake db:data:migrate
 ```
 
-To specify an alternative directory run this:
+To specify an alternative directory simply pass the MIGRATE_PATH argument:
 
 ```sh
 $ rake db:data:migrate MIGRATE_PATH=/db/alt_migration_path
@@ -28,29 +28,27 @@ $ rake db:data:migrate MIGRATE_PATH=/db/alt_migration_path
 
 ### Example
 
-For example if we have the following directory structure:
+For example, if we have the following directory structure:
 
-`
 /db
-    /schema
-    /data
-    /other_data
-`
+>/schema
+>/data
+>/other_data
 
-And you needed to run your migration, load some data, do some other task, then load the rest of your data you'd perform the following series of events.
+and we need to run a migration, load some data, do some other task, then load the rest of our data we'd perform the following series of events.
 
-Migrate your schema:
+Migrate the schema:
 
 ```sh
 $ rake db:migrate
 ```
 
-Migrate your initial data set:
+Migrate the initial data set:
 ```sh
 $ rake db:data:migrate
 ```
 
-After performing your other tasks, migrate your additional data set:
+After performing our other tasks, migrate the additional data set:
 ```sh
 $ rake db:data:migrate MIGRATE_PATH=/db/other_data
 ```
@@ -61,7 +59,7 @@ There are a couple things to note when using this tool:
 
 - The schema_migrations directory is shared across ALL MIGRATIONS. This means that you should make it a practice to have unique identifiers for ALL migration files across ALL migration directories. A good way to use this is to use the date and time for the identifier, such as "201207062043\_update\_some\_data.rb".
 - ActiveDataMigrations has been tested with Rails 3. It is not guaranteed to work with other versions of Rails or as a stand alone library.
-- Since this simply sits on top of ActiveRecord migrations you can also use it to run a standard schema migration by settin the migrate path to /db/schema (or wherever you have configured your schema root to be).
+- Since this simply sits on top of ActiveRecord migrations you can also use it to run a standard schema migration by setting the migrate path to /db/schema (or wherever you have configured your schema root to be).
 
 ### Contributing
 
@@ -71,7 +69,7 @@ I welcome any contributions anyone is wanting or willing to give. To contribute 
 
 ActiveDataMigrations is released under the MIT license:
 
-<www.opensource.org/licenses/MIT>
+<http://www.opensource.org/licenses/MIT>
 
 ----
 
