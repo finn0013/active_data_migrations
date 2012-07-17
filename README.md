@@ -31,9 +31,9 @@ $ rake db:data:migrate MIGRATE_PATH=/db/alt_migration_path
 For example, if we have the following directory structure:
 
 /db
->/schema
->/data
->/other_data
+    /schema
+    /data
+    /other_data
 
 and we need to run a migration, load some data, do some other task, then load the rest of our data we'd perform the following series of events.
 
