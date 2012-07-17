@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     active_data_migrations (1.0.0.beta)
-      activerecord
 
 GEM
   remote: http://rubygems.org/

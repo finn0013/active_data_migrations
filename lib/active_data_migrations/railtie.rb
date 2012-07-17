@@ -7,7 +7,6 @@ module ActiveDataMigrations
 
         railtie_name :active_data_migrations
 
-
         rake_tasks do
             load "active_data_migrations/tasks/data_migrations.rake"
         end

@@ -19,6 +19,15 @@ class Migration
             migration_path ||= "/db/data"
             puts "Operating with migration path '#{migration_path}'"
 
+            # Fully qualify the migration path.
+            if defined?(Rails)
+                root = Rails.root if defined?(Rails)
+            else
+                root = File.expand_path(File.join(File.dirname(__FILE__), "..", ".."))
+            end
+
+            migration_path = File.join(root, migration_path)
+
             # Set the migration path to ActiveRecord.
             ActiveRecord::Migrator.migrations_path = migration_path
             puts "Updated Rails migration path to '#{ActiveRecord::Migrator.migrations_path}'"
